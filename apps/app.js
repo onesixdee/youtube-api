@@ -11,7 +11,12 @@ $(function() {
     getRequest(searchTerm);
   })
 
-The q parameter specifies the query term to search for.
+  //     $.getJSON('https://www.googleapis.com/youtube/v3/search', {key: 'AIzaSyC7Cs4QsHnXZGxabOV1V9lEoPE3WErU35I', part: 'snippet', q: searchTerm}, function(data) {
+//   var myData = data;
+//   console.log(myData);
+// });
+
+//The q parameter specifies the query term to search for.
   function getRequest(searchTerm) {
     // query parameters the youtube api supports
     var params = {
@@ -27,7 +32,8 @@ The q parameter specifies the query term to search for.
 
     // getting the data and returning the JSON
     $.getJSON(url, params, function(data) {
-      // triggering the showResults function
+      console.log(data)
+      // triggering the showResults function and filtering by items
       showResults(data.items);
     })
   }
@@ -36,13 +42,14 @@ The q parameter specifies the query term to search for.
   function showResults(results) {
     var html = ""
 
-    $.each(results, function (key, value) {
-        var thumbnails = value.snippet.thumbnails.medium.url;
-        var title = value.snippet.title;
-        var videoId = value.id.videoId;
-      
-        html += '<ul><li><p>' + title + ' - ' + videoId + '</p><img src="' + thumbnails +'></li></ul>';
-
+    $.each(results, function (key, item) {
+        var thumbnails = item.snippet.thumbnails.medium.url;
+        var title = item.snippet.title;
+        var videoId = item.id.videoId;
+        var videoURL = "https://www.youtube.com/watch?v=" + videoId
+        
+        html += '<ul><li><p>' + title + '</p><a href="' + videoURL + '"  target="_blank"><img src="' + thumbnails +'"></a></li></ul>';
+        // content from var html will display in the div id search-results
         $('#search-results').html(html);
     })
   }
