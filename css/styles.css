@@ -3,10 +3,9 @@
 * {
   margin: 0;
   padding: 0;
-  border: 0;
+ /* border: 0;*/
   font-size: 100%;
-  font-family: "Ikaros", sans-serif;
-  text-align: center;
+  font-family: 'Helvetica', sans-serif;
   box-sizing: border-box;
   letter-spacing: 0.05em;
   -webkit-margin-before: 0px;
@@ -19,19 +18,74 @@
   -webkit-padding-end: 0px; 
 }
 
-input#query {
-
-	
-	margin-right: 10px;
-
-}
-
-input#query,
-input#submit {
+h1 {
 	margin-top: 50px;
-	height: 50px;
-	display: inline-block;
+	margin-bottom: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	color: red;
+	font-weight: bold;
+	letter-spacing: 0.05px;
+}
+
+p {
+	font-size: 16px;
+	margin-left: 10px;
+}
+
+/*iPhone portrait*/
+@media only screen and (min-width: 320px) {
+
+	h1 {
+		font-size: 32px;
+	}
+
+	#search-term {
+		margin-left: 20px;
+	}
+
+	input#query {
+		margin-left: 0;
+		margin-right: 2px;
+		text-align: left;
+	}
+
+	input#query,
+	input#submit {
+		margin-bottom: 50px;
+		height: 50px;
+	}
+
+	.thumbnails {
+		margin-bottom: 50px;
+	}
+
+	.col-sm-6 {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+}
+
+/*iPhone landscape*/
+@media only screen and (min-width: 480px) {
+
+	.col-sm-6 {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+	/*ipad potrait*/
+@media only screen and (min-width: 768px) {
+
+	h1 {
+		font-size: 40px;
+	}
 	
 }
 
+/*ipad lanscape / small laptop*/
+@media only screen and (min-width: 1024px) {
 
+}

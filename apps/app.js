@@ -9,6 +9,7 @@ $(function() {
     console.log(searchTerm)
     // calling the getRequest function with the searchTerm parameter that will search for text input
     getRequest(searchTerm);
+
   })
 
   //     $.getJSON('https://www.googleapis.com/youtube/v3/search', {key: 'AIzaSyC7Cs4QsHnXZGxabOV1V9lEoPE3WErU35I', part: 'snippet', q: searchTerm}, function(data) {
@@ -35,6 +36,7 @@ $(function() {
       console.log(data)
       // triggering the showResults function and filtering by items
       showResults(data.items);
+       $('#query').val('')
     })
   }
 
@@ -48,7 +50,7 @@ $(function() {
         var videoId = item.id.videoId;
         var videoURL = "https://www.youtube.com/watch?v=" + videoId
         
-        html += '<ul><li><p>' + title + '</p><a href="' + videoURL + '"  target="_blank"><img src="' + thumbnails +'"></a></li></ul>';
+        html += '<div class="col-sm-6 col-md-4"><p>' + title + '</p><a href="' + videoURL + '"  target="_blank"><img src="' + thumbnails +'" class="thumbnails img-responsive"></a></div>';
         // content from var html will display in the div id search-results
         $('#search-results').html(html);
     })
