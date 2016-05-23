@@ -1,0 +1,22 @@
+{
+  "name": "youtube-api",
+  "version": "1.0.0",
+  "description": "Thinkful project, working with Youtube's API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onesixdee/youtube-api.git"
+  },
+  "author": "Diana Duong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onesixdee/youtube-api/issues"
+  },
+  "homepage": "https://github.com/onesixdee/youtube-api#readme",
+  "dependencies": {
+    "jquery": "^2.2.4"
+  }
+}
